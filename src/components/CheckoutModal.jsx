@@ -23,7 +23,17 @@ const CheckoutModal = ({ cart, setCart, setActiveSection }) => {
           <ul>
             {cart.map((item, index) => (
               <li key={index}>
-                {item.name} - {item.price} руб.
+                <div className="checkout-item">
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="checkout-item-image"
+                    onError={(e) => {
+                      e.target.src = '/images/placeholder.jpg';
+                    }}
+                  />
+                  <span>{item.name} - {item.price} руб.</span>
+                </div>
               </li>
             ))}
           </ul>
