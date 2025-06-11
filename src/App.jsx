@@ -98,9 +98,9 @@ function App() {
       
       <Navigation 
         setActiveSection={setActiveSection} 
+        cartCount={cart.length}
         handleCheckout={handleCheckout}
       />
-      
       <main className="main-content">
         {activeSection === 'home' && (
           <CategoryList 
